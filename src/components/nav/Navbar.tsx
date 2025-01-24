@@ -5,28 +5,28 @@ import { DOCUMENTATION_URL, GITHUB_ORG, GET_STARTED_URL } from "@/lib/constants"
 
 export function Navbar() {
   return (
-    <nav className="border-b py-4">
-      <div className="container flex items-center justify-between">
+    <nav className="border-b py-4 w-full overflow-x-hidden">
+      <div className="container px-4 mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <Link href="/" className="flex items-center">
           <Image
             src="/logo.png"
             alt="iotAgent Logo"
-            width={120}
-            height={40}
-            className="h-10 w-auto"
+            width={200}
+            height={67}
+            className="h-12 sm:h-16 w-auto"
             priority
           />
         </Link>
-        <div className="flex gap-4">
-          <Button variant="ghost" asChild>
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+          <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
             <Link href={DOCUMENTATION_URL}>Documentation</Link>
           </Button>
-          <Button variant="ghost" asChild>
+          <Button variant="ghost" size="sm" className="whitespace-nowrap" asChild>
             <Link href={GITHUB_ORG} target="_blank">
               GitHub
             </Link>
           </Button>
-          <Button asChild>
+          <Button size="sm" className="whitespace-nowrap" asChild>
             <Link href={GET_STARTED_URL}>Get Started</Link>
           </Button>
         </div>
